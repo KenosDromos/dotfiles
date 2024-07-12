@@ -1,17 +1,13 @@
 from time import ctime
-from enum import Enum, auto
 
-class LoggerStatus(Enum):
-    ERROR = auto()
-    SUCCESS = auto()
 
 class Logger():
-    filename = "build_debug.log"
+    filename = "build.log"
 
     @staticmethod
-    def add_record(text: str, *, status: LoggerStatus) -> None:
-        formatted_text = f"{ctime()} | [{status}] | {text} \n"
-        print(formatted_text, end='')
+    def add_record(text: str) -> None:
+        text = f"{ctime()} | {text} \n"
+        print(text, end='')
 
         with open(Logger.filename, "a", encoding="UTF-8") as file:
-            file.write(formatted_text)
+            file.write(text)

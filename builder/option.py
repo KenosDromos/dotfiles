@@ -1,14 +1,18 @@
+from preset import Configuration
+
 class UserInterface():
     @staticmethod
     def __is_valid(text) -> bool:
-        if "y" in text.lower():
-            return True
-        else:
-            return False
+        return "y" in text.lower()
         
     @staticmethod
-    def get_params() -> list:
-        print("Do you want to install? [Y/n]: ", end="")
-        option_1 = UserInterface.__is_valid(input())
+    def get_params() -> Configuration:
+        print("Do you want to change preset config [Y/n]: ", end="")
+        
+        if UserInterface.__is_valid(input()):
+            for index, option in enumerate(Configuration):
+                print(f"{index + 1}) {option.value.prompt} [Y/n]: ", end="")
 
-        return [option_1]
+                option.value.enable = UserInterface.__is_valid(input())
+
+        return Configuration
