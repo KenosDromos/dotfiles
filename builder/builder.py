@@ -9,7 +9,7 @@ class SystemBuild:
         Logger.add_record(start_text, status=LoggerStatus.SUCCESS)
 
         if args[0]: 
-            SystemBuild.__building()
+            SystemBuild.building()
 
             end_text = f"[+] Installation Completed Successfully"
             Logger.add_record(end_text, status=LoggerStatus.SUCCESS)
