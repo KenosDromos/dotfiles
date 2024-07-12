@@ -1,6 +1,6 @@
 import os
 
-from logger import Logger, LoggerStatus
+from builder.logger import Logger, LoggerStatus
 
 class SystemBuild:
     @staticmethod
