@@ -5,7 +5,8 @@ from builder.builder import SystemBuild
 
 def main():
     params = UserInterface.get_params()
-    SystemBuild.start(params)
+    print(params.)
+    # SystemBuild.start(params)
 
            
 if __name__ == "__main__":

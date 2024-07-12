@@ -1,9 +1,10 @@
 from enum import Enum
 
 class Param:
-    def __init__(self, prompt: str, enable: bool):
+    def __init__(self, prompt: str, enable: bool, action):
         self.prompt = prompt
         self.enable = enable   
+        self.action = action
     
 class Configuration(Enum):
     START_INSTALL = Param("Do you want to install", True)

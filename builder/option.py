@@ -7,12 +7,13 @@ class UserInterface():
         
     @staticmethod
     def get_params() -> Configuration:
+        params = Configuration
         print("Do you want to change preset config [Y/n]: ", end="")
         
         if UserInterface.__is_valid(input()):
-            for index, option in enumerate(Configuration):
+            for index, option in enumerate(params):
                 print(f"{index + 1}) {option.value.prompt} [Y/n]: ", end="")
 
                 option.value.enable = UserInterface.__is_valid(input())
 
-        return Configuration
+        return params
