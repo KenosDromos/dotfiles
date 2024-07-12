@@ -1,14 +1,18 @@
-import os
-from builder.option import UserInterface
-from builder.builder import SystemBuild
+from builder.option import Configuration
+from builder.builder import Assembling
 
 
 def main():
-    params = UserInterface.get_params()
-    print(params.)
-    # SystemBuild.start(params)
+    user = Configuration()
 
-           
+    if user.start():
+        user.replace_config()
+        params = user.get_params()
+        del user
+
+        print(params)
+
+        # Assembling.start(params)
+
 if __name__ == "__main__":
-    os.system("clear")
     main()

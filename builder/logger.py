@@ -1,9 +1,9 @@
 from time import ctime
 
 
-class Logger():
+class Logger:
     filename = "build.log"
-
+    
     @staticmethod
     def add_record(text: str) -> None:
         text = f"{ctime()} | {text} \n"
