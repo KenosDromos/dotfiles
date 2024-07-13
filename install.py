@@ -1,18 +1,22 @@
-from builder.option import Configuration
-from builder.builder import Assembling
+from app.option import Configuration
+from app.builder import Assembling
 
+
+class Application:
+    __to_begin = False
+
+    def configuration(self):
+        user = Configuration()
+
+    def run(self):
+        if self.user.ready(): 
+            Assembling.start()
+        else: 
+            print("Canceling the installation")
 
 def main():
-    user = Configuration()
-
-    if user.start():
-        user.replace_config()
-        params = user.get_params()
-        del user
-
-        print(params)
-
-        # Assembling.start(params)
+    app = Application()
+    app.run()
 
 if __name__ == "__main__":
     main()

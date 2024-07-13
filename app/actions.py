@@ -1,11 +1,8 @@
 import os
-import time
-from builder.logger import Logger
 
 class Action:
     @staticmethod
-    def clean_console(timeout: float = 0):
-        time.sleep(timeout)
+    def clean_console():
         os.system("clear")
 
     @staticmethod

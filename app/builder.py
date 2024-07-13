@@ -1,6 +1,3 @@
-from builder.logger import Logger
-
-
 class Assembling:
     @staticmethod
     def start(params: dict):
