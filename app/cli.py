@@ -1,9 +1,15 @@
+import time
+
+from app.actions import Action
+
+
 class UserInterface:
-    @staticmethod
+    def __init__(self):
+        pass
+
     def print():
         pass
 
-    @staticmethod
     def request(push: str) -> bool:
         """ 
         Find symbol
@@ -24,4 +30,3 @@ class UserInterface:
                 return False
             if '0' == user_input: 
                 print(f"Incorrect data entry [{user_input}]")
-

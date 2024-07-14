@@ -1,10 +1,7 @@
-import time
 
-from app.interaction import UserInterface
-from app.actions import Action
+class ConfigHandler:
+    PATH_FILE_CONFIG = "config.json"
 
-
-class Configuration:
     def __init__(self):
         Action.clean_console()
 
