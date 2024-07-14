@@ -8,11 +8,10 @@ class Configuration:
     def __init__(self):
         Action.clean_console()
 
-         = self.__start_install()
+        self.__start_install()
         
         if self.__to_begin:
             configur = self.__start_config()
-
 
 
     def __del__(self):

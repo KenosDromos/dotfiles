@@ -41,7 +41,6 @@ class Logger:
         self.logger.info(message)
         print(message)
 
-
     def critical(self, message: str, exit_program: bool = True):
         self.logger.critical(message)
         print(message)
@@ -50,5 +49,6 @@ class Logger:
             print("Program will terminate due to a critical error.")
             sys.exit(1)
 
-except RuntimeError as e:
-    logger.critical(f"Error occurred: {str(e)}")
+class TaskManager(Logger):
+    def __init__(self):
+        super().__init__()
