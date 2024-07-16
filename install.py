@@ -1,20 +1,15 @@
-from app.logs.logger import TaskManager
+from installer.logger import LoggerConfigurator, dynamic_logger as logger
+from installer.configurator import ConfigHandler
+from installer.cli import UserInterface
+from installer.builder import Assembling
 
-from app.configurator import ConfigHandler
-from app.cli import UserInterface
-from app.builder import Assembling
 
-
-class Application(TaskManager, ConfigHandler, UserInterface, Assembling):
+class Application:
     def __init__(self):
-        super().__init__()
-        self.config = self.__get_config()
-
-    def __get_config():
-        return ConfigHandler()
-    
-    def configuration(self):
-        user = Configuration()
+        LoggerConfigurator.setup()
+        self.config = ConfigHandler()
+        self.config.read_json()
+        # self.assembler = Assembling(self.config, self.logger)
 
     def run(self):
         if self.user.ready(): 
@@ -22,11 +17,11 @@ class Application(TaskManager, ConfigHandler, UserInterface, Assembling):
         else: 
             print("Canceling the installation")
 
+@logger
 def main():
-    app = Application()
-    app.run()
+    pass
 
 if __name__ == "__main__":
+    app = Application()
+    # app.run()
     main()
-
-# TODO: Вытаскиваем сюда всю логику, не прячем внутри

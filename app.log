@@ -1,0 +1,50 @@
+2024-07-16 15:32:42,300 - __main__.example_function - INFO - Calling function/method
+2024-07-16 15:32:42,302 - __main__.example_function - INFO - Function/method completed
+2024-07-16 15:32:42,303 - __main__.ExampleClass.example_method - INFO - Calling function/method
+2024-07-16 15:32:42,303 - __main__.ExampleClass.example_method - INFO - Function/method completed
+2024-07-16 15:32:42,303 - __main__.special_function - INFO - Calling function/method
+2024-07-16 15:32:42,304 - __main__.special_function - WARNING - Special handling for special_function
+2024-07-16 15:32:42,304 - __main__.special_function - INFO - Function/method completed
+2024-07-16 15:32:42,304 - __main__.SpecialClass.special_method - INFO - Calling function/method
+2024-07-16 15:32:42,305 - __main__.SpecialClass.special_method - WARNING - Special handling for SpecialClass
+2024-07-16 15:32:42,305 - __main__.SpecialClass.special_method - INFO - Function/method completed
+2024-07-16 15:33:24,293 - __main__.example_function - INFO - Calling function/method
+2024-07-16 15:33:24,295 - __main__.example_function - INFO - Function/method completed
+2024-07-16 15:33:24,295 - __main__.ExampleClass.example_method - INFO - Calling function/method
+2024-07-16 15:33:24,296 - __main__.ExampleClass.example_method - INFO - Function/method completed
+2024-07-16 15:33:24,296 - __main__.special_function - INFO - Calling function/method
+2024-07-16 15:33:24,296 - __main__.special_function - WARNING - Special handling for special_function
+2024-07-16 15:33:24,297 - __main__.special_function - INFO - Function/method completed
+2024-07-16 15:33:24,297 - __main__.SpecialClass.special_method - INFO - Calling function/method
+2024-07-16 15:33:24,297 - __main__.SpecialClass.special_method - WARNING - Special handling for SpecialClass
+2024-07-16 15:33:24,298 - __main__.SpecialClass.special_method - INFO - Function/method completed
+2024-07-16 15:33:43,371 - __main__.example_function - INFO - Calling function/method
+2024-07-16 15:33:43,373 - __main__.example_function - INFO - Function/method completed
+2024-07-16 15:33:43,373 - __main__.ExampleClass.example_method - INFO - Calling function/method
+2024-07-16 15:33:43,374 - __main__.ExampleClass.example_method - INFO - Function/method completed
+2024-07-16 15:33:43,374 - __main__.special_function - INFO - Calling function/method
+2024-07-16 15:33:43,374 - __main__.special_function - WARNING - Special handling for special_function
+2024-07-16 15:33:43,375 - __main__.special_function - INFO - Function/method completed
+2024-07-16 15:33:43,375 - __main__.SpecialClass.special_method - INFO - Calling function/method
+2024-07-16 15:33:43,375 - __main__.SpecialClass.special_method - WARNING - Special handling for SpecialClass
+2024-07-16 15:33:43,376 - __main__.SpecialClass.special_method - INFO - Function/method completed
+2024-07-16 15:34:27,591 - __main__.example_function - DEBUG - Calling function/method
+2024-07-16 15:34:27,593 - __main__.example_function - INFO - Function/method completed
+2024-07-16 15:34:27,593 - __main__.ExampleClass.example_method - DEBUG - Calling function/method
+2024-07-16 15:34:27,594 - __main__.ExampleClass.example_method - INFO - Function/method completed
+2024-07-16 15:34:27,594 - __main__.special_function - DEBUG - Calling function/method
+2024-07-16 15:34:27,594 - __main__.special_function - WARNING - Special handling for special_function
+2024-07-16 15:34:27,595 - __main__.special_function - INFO - Function/method completed
+2024-07-16 15:34:27,595 - __main__.SpecialClass.special_method - DEBUG - Calling function/method
+2024-07-16 15:34:27,595 - __main__.SpecialClass.special_method - WARNING - Special handling for SpecialClass
+2024-07-16 15:34:27,596 - __main__.SpecialClass.special_method - INFO - Function/method completed
+2024-07-16 22:36:08,830 - __main__.example_function - DEBUG - Calling function/method
+2024-07-16 22:36:08,832 - __main__.example_function - INFO - Function/method completed
+2024-07-16 22:36:08,832 - __main__.ExampleClass.example_method - DEBUG - Calling function/method
+2024-07-16 22:36:08,833 - __main__.ExampleClass.example_method - INFO - Function/method completed
+2024-07-16 22:36:08,833 - __main__.special_function - DEBUG - Calling function/method
+2024-07-16 22:36:08,833 - __main__.special_function - WARNING - Special handling for special_function
+2024-07-16 22:36:08,834 - __main__.special_function - INFO - Function/method completed
+2024-07-16 22:36:08,834 - __main__.SpecialClass.special_method - DEBUG - Calling function/method
+2024-07-16 22:36:08,834 - __main__.SpecialClass.special_method - WARNING - Special handling for SpecialClass
+2024-07-16 22:36:08,835 - __main__.SpecialClass.special_method - INFO - Function/method completed

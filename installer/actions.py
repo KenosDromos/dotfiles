@@ -1,16 +1,21 @@
 import os
 
+from installer.logger import dynamic_logger as log
+
 class Action:
+    @log
     @staticmethod
     def clean_console():
         os.system("clear")
 
+    @log
     @staticmethod
     def create_folders():
         default_folders = "~/Videos ~/Documents ~/Downloads ~/Music ~/Desktop"
         os.system("mkdir -p ~/.config")
         os.system(f"mkdir -p {default_folders}")
 
+    @log
     @staticmethod
     def copy_bspwm_dotfiles():
         os.system("cp -r config/* ~/.config/")

@@ -1,22 +1,19 @@
-class Assembling:
-    @staticmethod
+from installer.logger import dynamic_logger as log
+
+class Assembling():
     def start(params: dict):
-        Logger.add_record(f"Starting assembly. Options {params}")
+        pass
 
         if params: 
             Assembling.building()
 
             end_text = f"Installation Completed Successfully"
-            Logger.add_record(end_text)
         else:
             end_text =  f"Installation Canceled"
-            Logger.add_record(end_text)
-    
-    @staticmethod
     def procesor():
         pass
 
-    @staticmethod
     def building():
+        pass
         # SystemBuild.create_default_foleders()
-        Logger.add_record("Create default directories")
+        # "Create default directories"

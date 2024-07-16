@@ -1,0 +1,4 @@
+2024-07-16 23:03:45,756 | ConfigHandler - INFO | Calling read_json. 
+2024-07-16 23:03:45,759 | Action - INFO | Calling clean_console. 
+2024-07-16 23:03:45,777 | Action - INFO | clean_console completed.
+2024-07-16 23:03:45,777 | ConfigHandler - INFO | read_json completed.

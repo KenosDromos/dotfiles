@@ -1,10 +1,10 @@
 import time
 
-from app.actions import Action
+from installer.actions import Action
+from installer.logger import dynamic_logger as log
 
-
-class UserInterface:
-    def __init__(self):
+class UserInterface():
+    def __init__(self) -> None:
         pass
 
     def print():
@@ -30,3 +30,14 @@ class UserInterface:
                 return False
             if '0' == user_input: 
                 print(f"Incorrect data entry [{user_input}]")
+    
+    def __start_install(self):
+        notice = "Do you want to start the installation"
+        response = UserInterface.request(notice)
+
+        return response
+    
+    def __start_config(self):
+        notice = "Do you want to change preset config"
+        self.user_approved_config_change = UserInterface.request(notice)
+
