@@ -1,4 +1,7 @@
+from sys import exit as EXIT
+
 from installer.logger import dynamic_logger as log
+from installer.config import Config
 
 class Assembling():
     def start(params: dict):
@@ -10,8 +13,16 @@ class Assembling():
             end_text = f"Installation Completed Successfully"
         else:
             end_text =  f"Installation Canceled"
-    def procesor():
+
+    def procesor(exit_program: bool = True):
         pass
+    
+
+        if exit_program:
+                print("Program will terminate due to a critical error.")
+                print(f"See the details in the file [???]")
+
+                EXIT(1)
 
     def building():
         pass
