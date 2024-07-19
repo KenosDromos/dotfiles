@@ -9,4 +9,4 @@ class ConfigHandler():
 
     @log
     def get_config(self):
-        
+        pass
