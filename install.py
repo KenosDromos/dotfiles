@@ -7,29 +7,32 @@ from installer.builder import Assembling
 class Application:
     def __init__(self):
         Config.setup()
-
+        
     @logger
     def launch(self) -> bool:
         message = "Do you want to start the installation"
-        return UserInterface.request(message)
+        return UserInterface.confirm_action(message)
 
     @logger
-    def menu():
-        items = [
-            ""
-        ]
-        
+    def launching_interfaces(self):
+        UserInterface.builder_interface()
+
     @logger
     def change_builder_config(self):
+        builder_interface = [
+            ("View config"), 
+            ("Change config"),
+            ("Start Building")
+        ]
         message = "Do you want to change preset config"
-        response = UserInterface.request(message)
+        response = UserInterface.confirm_action(message)
 
         if response:
             config = Config.get_builder_config()
 
             for key, value in config["config_data"].items():
                 message = value["prompt"]
-                response = UserInterface.request(message)
+                response = UserInterface.confirm_action(message)
 
                 if response != value["enabled"]:
                     config["config_data"][key]["enabled"] = response
@@ -47,8 +50,8 @@ class Application:
 if __name__ == "__main__":
     app = Application()
     
-    if app.launch():
-        app.change_builder_config()
+    # if app.launch():
+    app.launching_interfaces()
 
         # app.run()
 

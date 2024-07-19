@@ -143,14 +143,11 @@ class Config:
 
             :return: Dictionary with configuration data.
             """
-            return {
-                "config_path": self._config_path,
-                "config_data": self._config_data
-            }
+            return self._config_data
         
         def set_config(self, config: dict) -> None:
             """
             Set the current configuration data.
             """
-            self._write_config_file(config["config_data"])
+            self._write_config_file(config)
             self._config_data = config
