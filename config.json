@@ -5,7 +5,7 @@
     },
     "packages": {
         "prompt": "Install software packages",
-        "enabled": true
+        "enabled": false
     },
     "dotfiles": {
         "prompt": "Install dotfiles",

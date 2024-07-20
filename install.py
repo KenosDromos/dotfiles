@@ -19,6 +19,7 @@ class Application:
         manager = BuilderInterface()
         manager.load_interface()
 
+
     @logger
     def run(self):
         Assembling.setup()
@@ -31,4 +32,5 @@ if __name__ == "__main__":
     # if app.launch():
     # app.manager_interface()
     app.run()
+    # print("Successful installation!")
 

@@ -1,11 +1,14 @@
 import os
 
-
 # ______________________________________________________________________ Class BulderAction
 class BuilderAction:
     @staticmethod
     def clean_console():
         os.system("clear")
+
+    @staticmethod
+    def action(action: str):
+        BuilderAction.action()
 
     @staticmethod
     def create_folders():
