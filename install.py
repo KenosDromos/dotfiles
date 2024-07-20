@@ -21,6 +21,7 @@ class Application:
 
     @logger
     def run(self):
+        Assembling.setup()
         Assembling.start()
 
 

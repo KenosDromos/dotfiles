@@ -1,32 +1,39 @@
-from sys import exit as EXIT
+from typing import Callable, Optional, List, Tuple, Dict, Any
 
-from installer.logger import dynamic_logger as log
+from installer.logger import Logger, dynamic_logger as logger
 from installer.config import Config
-
+from installer.action import BuilderAction
 
 # ______________________________________________________________________ Class Assembling
 class Assembling():
-    def start(params: dict):
-        pass
+    _builder_options: Dict[str, Dict[str, Any]]
 
-        if params: 
-            Assembling.building()
+    @logger
+    @staticmethod
+    def setup():
+        Assembling._builder_options = Config.get_builder_config()
 
-            end_text = f"Installation Completed Successfully"
-        else:
-            end_text =  f"Installation Canceled"
+    @logger
+    @staticmethod
+    def start():
+        BuilderAction.clean_console()
+        Assembling._building()
 
-    def procesor(exit_program: bool = True):
+    @logger
+    @staticmethod
+    def _building():
+        logger = Logger.get_logger("_building")
+        
+        for option in Assembling._builder_options:
+            
+
+    @logger
+    @staticmethod
+    def _procesor(exit_program: bool = True):
         pass
     
 
         if exit_program:
                 print("Program will terminate due to a critical error.")
                 print(f"See the details in the file [???]")
-
-                EXIT(1)
-
-    def building():
-        pass
-        # SystemBuild.create_default_foleders()
-        # "Create default directories"
+                exit()

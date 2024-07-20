@@ -4,25 +4,9 @@ from functools import wraps
 
 # ______________________________________________________________________ Class Logger
 class Logger:
-    logger: logging.Logger
-        
     @staticmethod
     def get_logger(logname: str):
-        Logger.logger = logging.getLogger(logname)
-    
-    @staticmethod
-    def info(message: str):
-        print(message)
-        Logger.logger.info(message)
-
-    @staticmethod
-    def debug(message: str):
-        Logger.logger.debug(message)
-
-    @staticmethod
-    def critical(message: str):
-        print(message)
-        Logger.logger.critical(message)
+        return logging.getLogger(logname)
 
 
 # ______________________________________________________________________ Function dynamic_logger
@@ -37,15 +21,15 @@ def dynamic_logger(func = None):
         logger_name = f"{class_name}" if class_name else f"Global"
 
         # Return a logger with the specified name, creating it if necessary.
-        Logger.get_logger(logger_name)
+        logger = Logger.get_logger(logger_name)
 
         # START
-        Logger.debug(f"Calling {func_name}.")
+        logger.debug(f"Calling {func_name}.")
 
         result = func(*args, **kwargs)
 
         # END
-        Logger.debug(f"{func_name} completed.")
+        logger.debug(f"{func_name} completed.")
 
         return result
     return wrapper
