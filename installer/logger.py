@@ -2,6 +2,7 @@ import logging
 from functools import wraps
 
 
+# ______________________________________________________________________ Class Logger
 class Logger:
     logger: logging.Logger
         
@@ -24,6 +25,7 @@ class Logger:
         Logger.logger.critical(message)
 
 
+# ______________________________________________________________________ Function dynamic_logger
 def dynamic_logger(func = None):
     if func is None: 
         return lambda f: dynamic_logger(f)

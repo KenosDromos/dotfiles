@@ -3,6 +3,8 @@ import logging
 from datetime import datetime
 from typing import Optional
 
+
+# ______________________________________________________________________ Class Config
 class Config:
     """
     Static class for managing configuration settings.
@@ -62,7 +64,9 @@ class Config:
         """
         if not Config._is_setup:
             raise RuntimeError("Config.setup() must be called before any other method.")
-        
+
+
+# ______________________________________________________________________ Subclass Config.LoggerConfigurator
     class LoggerConfigurator:
         """
         Class for configuring and managing logger settings.
@@ -107,6 +111,8 @@ class Config:
                 "log_file_path": self._file_path
             }
 
+
+# ______________________________________________________________________ Subclass Config.BuilderConfigurator
     class BuilderConfigurator:
         """
         Class for loading and storing configuration data from a JSON file.

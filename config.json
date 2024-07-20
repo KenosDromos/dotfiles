@@ -1,7 +1,7 @@
 {
     "create_folders": {
         "prompt": "Create default folders",
-        "enabled": false
+        "enabled": true
     },
     "packages": {
         "prompt": "Install software packages",
@@ -9,7 +9,7 @@
     },
     "dotfiles": {
         "prompt": "Install dotfiles",
-        "enabled": false
+        "enabled": true
     },
     "aur_helper": {
         "prompt": "Install AUR helper (Paru)",
