@@ -36,4 +36,5 @@ def test():
                     packages.PACMAN["WINDOWS_MANAGER_COMPONENTS"] + \
                     packages.PACMAN["NVIDIA_DRIVER"] 
 
+    os.system("sudo pacman -Syy && sudo pacman -Su")
     os.system("sudo pacman -S --noconfirm " + ' '.join(install_list))
