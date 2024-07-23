@@ -3,20 +3,24 @@
         "prompt": "Create default folders",
         "enabled": true
     },
-    "packages": {
-        "prompt": "Install software packages",
-        "enabled": false
+    "copy_dotfiles": {
+        "prompt": "Copy dotfiles",
+        "enabled": true
     },
-    "dotfiles": {
-        "prompt": "Install dotfiles",
+    "update_pacman": {
+        "prompt": "Update database and packages",
+        "enabled": true
+    },
+    "packages": {
+        "prompt": "Install packages",
         "enabled": true
     },
     "aur_helper": {
         "prompt": "Install AUR helper (Paru)",
-        "enabled": true
+        "enabled": false
     },
     "nvidia_driver": {
         "prompt": "Install Nvidia driver",
-        "enabled": true
+        "enabled": false
     }
 }

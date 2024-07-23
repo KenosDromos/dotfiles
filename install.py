@@ -3,6 +3,7 @@ from installer.logger import dynamic_logger as logger
 from installer.user_interfaces import UserAction, BuilderInterface
 from installer.builder import Assembling
 
+from test import test
 
 # ______________________________________________________________________ Class Application
 class Application:
@@ -19,7 +20,6 @@ class Application:
         manager = BuilderInterface()
         manager.load_interface()
 
-
     @logger
     def run(self):
         Assembling.setup()
@@ -27,10 +27,10 @@ class Application:
 
 
 if __name__ == "__main__":
-    app = Application()
-    
+    # app = Application()
     # if app.launch():
     # app.manager_interface()
-    app.run()
+    # app.run()
     # print("Successful installation!")
 
+    test()

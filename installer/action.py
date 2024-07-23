@@ -1,5 +1,9 @@
 import os
 
+
+import packages
+
+
 # ______________________________________________________________________ Class BulderAction
 class BuilderAction:
     @staticmethod
@@ -17,7 +21,11 @@ class BuilderAction:
         os.system(f"mkdir -p {default_folders}")
 
     @staticmethod
-    def copy_bspwm_dotfiles():
+    def packages():
+        pass
+    
+    @staticmethod
+    def copy_dotfiles():
         os.system("cp -r config/* ~/.config/")
         os.system("cp Xresources ~/.Xresources")
         os.system("cp gtkrc-2.0 ~/.gtkrc-2.0")
@@ -25,3 +33,16 @@ class BuilderAction:
         os.system("cp -r themes ~/.themes")
         os.system("cp xinitrc ~/.xinitrc")
         os.system("cp -r bin/ ~/")
+
+    @staticmethod
+    def packages():
+        install_list = packages.PACMAN
+    
+    @staticmethod
+    def update_pacman():
+        os.system("sudo pacman -Syu")
+
+    @staticmethod
+    def aur_helper():
+        os.system("git -C /tmp clone https://aur.archlinux.org/paru.git")
+        os.system("cd /tmp/paru && makepkg -si")

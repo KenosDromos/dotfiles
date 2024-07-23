@@ -18,8 +18,9 @@ class Assembling():
         Assembling._builder_options = Config.get_builder_config()
         Assembling._log_file_path = Config.get_logger_config()["log_file_path"]
 
+        Assembling._del_disabled_options()
         # Assembling._valid_options()
-        # Assembling._del_disabled_options()
+        
 
     @logger
     @staticmethod
@@ -32,8 +33,8 @@ class Assembling():
     def _building():
         for option, value in Assembling._builder_options.items():
             prompt = value["prompt"]
-            message = f"[+] {prompt}"
-            
+            message = f"[Builder] {prompt}"
+
             Assembling._info_message(message)
             Assembling._procesor(option)
 
