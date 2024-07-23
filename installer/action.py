@@ -1,5 +1,5 @@
 import os
-
+import re
 
 import packages
 
@@ -19,10 +19,6 @@ class BuilderAction:
         default_folders = "~/Videos ~/Documents ~/Downloads ~/Music ~/Desktop"
         os.system("mkdir -p ~/.config")
         os.system(f"mkdir -p {default_folders}")
-
-    @staticmethod
-    def packages():
-        pass
     
     @staticmethod
     def copy_dotfiles():
@@ -36,8 +32,39 @@ class BuilderAction:
 
     @staticmethod
     def packages():
-        install_list = packages.PACMAN
+        install_list =  packages.PACMAN["BASE"] + \
+                    packages.PACMAN["ENVIRONMENTS"] + \
+                    packages.PACMAN["ENVIRONMENTS_ADDITION"] + \
+                    packages.PACMAN["WINDOWS_MANAGER_COMPONENTS"] + \
+                    packages.PACMAN["NVIDIA_DRIVER"] 
+
+        os.system("sudo pacman -Syy && sudo pacman -Su")
+        os.system("sudo pacman -S --noconfirm " + ' '.join(install_list))
     
+    @staticmethod
+    def replace_config():
+        file_path = ""
+
+        config = {}
+        with open(file_path, 'r') as file:
+            for line in file:
+                match = re.match(r'(\w+)=\((.*?)\)', line)
+                if match:
+                    key = match.group(1)
+                    values = match.group(2).split()
+                    config[key] = values
+
+        for element in ["nvidia", "nvidia_modeset", "nvidia_uvm", "nvidia_drm"]:
+            if element not in config['MODULES']:
+                config['MODULES'].append(element)
+        
+        with open(file_path, 'w') as file:
+            for key, values in config.items():
+                file.write(f'{key}=({" ".join(values)})\n')
+
+        with open("/etc/modprobe.d/nvidia.conf", "w") as file:
+            file.write("options nvidia_drm modeset=1 fbdev=1\n")
+
     @staticmethod
     def update_pacman():
         os.system("sudo pacman -Syu")
