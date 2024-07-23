@@ -1,5 +1,5 @@
 import os
-
+import re
 
 import packages
 
@@ -38,3 +38,25 @@ def test():
 
     os.system("sudo pacman -Syy && sudo pacman -Su")
     os.system("sudo pacman -S --noconfirm " + ' '.join(install_list))
+
+def echo():
+    file_path = input("path: ")
+
+    config = {}
+    with open(file_path, 'r') as file:
+        for line in file:
+            match = re.match(r'(\w+)=\((.*?)\)', line)
+            if match:
+                key = match.group(1)
+                values = match.group(2).split()
+                config[key] = values
+
+    for element in ["nvidia", "nvidia_modeset", "nvidia_uvm", "nvidia_drm"]:
+        if element not in config['MODULES']:
+            config['MODULES'].append(element)
+    
+    with open(file_path, 'w') as file:
+        for key, values in config.items():
+            file.write(f'{key}=({" ".join(values)})\n')
+    
+echo()
